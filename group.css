@@ -4,6 +4,12 @@ body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  background-image: url("image3.avif");
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:absolute;
+  
+ 
 }
 
 /* Toggle Styles */
@@ -57,7 +63,7 @@ body {
 }
 
 #content nav{
-  background-color:whitesmoke;
+  background-color:rgb(170, 213, 244);
 }
 
  .nav a{
@@ -98,3 +104,5 @@ body {
   border: 1px solid black;
   background-color: white;
 }
+
+

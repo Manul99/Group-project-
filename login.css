@@ -1,12 +1,17 @@
 body
 {
-background:#37474F;    
+  
+background-image: url("image\ 3.jpg");
+background-repeat:no-repeat;
+background-size: cover;
+
+ /*     
 position: absolute;
 background-position: center;
 background-size: cover;
 margin:0;
 padding:0;
-
+*/
 
       
 }
@@ -19,7 +24,7 @@ padding:0;
   height: 500px;
   left:430px;
   top: 150px;
-  background:linear-gradient(179.99deg, rgba(84, 72, 72, 0) -14.88%, #000000 29.84%);
+  background:linear-gradient(179.99deg, rgba(84, 72, 72, 0) -14.88%, #43719d 29.84%);
   border: 1px solid black;
 
 }

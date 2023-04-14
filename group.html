@@ -22,6 +22,7 @@
           </header>
           <br>
           <center><img src="construction.jpg" width="150" height="150" style="border-radius: 15%;"></center>
+          <br>
           <ul class="nav">
             <li>
               <a href="#">
@@ -38,7 +39,7 @@
             <li>
                 <a class="nav-link active link-light" aria-current="page" href="http://127.0.0.1:5500/Group-project-/liveLocation.html"><img src="geo-fill.svg">Live Location of the worker</a>
             </li>
-            <li><br><br><br><br><br>
+            <li><br><br><br><br>
                 <a class="nav-link active link-light" aria-current="page" href="#"><img src="customer-support.png" width="20" height="20"><i></i>Services</a>
             </li>
           </ul>
@@ -49,7 +50,7 @@
             <div class="container-fluid">
               <ul class="nav navbar-nav navbar-right">
                 <div class="d-flex flex-row-reverse">
-                <label style="color:red; display:block; margin:auto" class="align-items-end" id="fire">Construction company</label>
+                <h4 style="color:red; display:block; margin:auto" class="align-items-end" id="fire">Construction company</h4>
               </div>
               </ul>
             </div>
@@ -95,7 +96,21 @@
    //get a reference to  the database service
    var database=firebase.database();
 
+     // Get a reference to the node
+  var dataRef=database.ref('Button');
+
+//Retrieve the data to the website
+  dataRef.child('status').once('value').then(function(snapshot){
+    var status=snapshot.val();
+    console.log(status);
+
+// Display the sensor value in website
+    document.getElementById('button').innerHTML=status;
+    
+  });
+   /*
     // Get a reference to the node
+    
    var switchRef=database.ref('Button');
    switchRef.on('value', function(snapshot) {
   var switchValue = snapshot.val();
@@ -117,6 +132,7 @@
     switchElement.innerHTML = 'EMERGENCY';
   }
 });
+*/
 
   </script>
 

@@ -6,8 +6,11 @@ body {
   font-size: 16px;
   background-image: url("image3.avif");
   background-repeat:no-repeat;
-  background-size:cover;
-  background-position:absolute;
+  background-size: cover;
+  background-position: fixed;
+  
+  
+  
   
  
 }
@@ -106,3 +109,18 @@ body {
 }
 
 
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking {
+  animation: blinking 1s infinite;
+}

@@ -4,15 +4,7 @@ body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  background-image: url("image3.avif");
-  background-repeat:no-repeat;
-  background-size: cover;
-  background-position: fixed;
-  
-  
-  
-  
- 
+  background:linear-gradient(179.99deg, rgba(84, 72, 72, 0) -14.88%, #6f98ab 29.84%);
 }
 
 /* Toggle Styles */
@@ -66,7 +58,8 @@ body {
 }
 
 #content nav{
-  background-color:rgb(170, 213, 244);
+  background-color:#263238;
+  height:52px;
 }
 
  .nav a{
@@ -123,4 +116,15 @@ body {
 
 .blinking {
   animation: blinking 1s infinite;
+}
+
+.worker
+{
+  background:linear-gradient(179.99deg, rgba(84, 72, 72, 0) -14.88%, #569d89 29.84%);
+  border-radius: 2%;
+}
+
+.card
+{
+  background-color: whitesmoke;
 }

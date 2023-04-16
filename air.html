@@ -50,32 +50,40 @@
             <div class="container-fluid">
               <ul class="nav navbar-nav navbar-right">
                 <div class="d-flex flex-row-reverse">
-                <label style="color:black; display:block; margin:auto" class="align-items-end" id="fire">Construction Company</label>
+                <h3 style="color:white; display:block; margin:auto" class="align-items-end" id="fire">Construction Company</h3>
               </div>
               </ul>
             </div>
-          </nav>
+          </nav><br>
           <div class="container-fluid">
             <h1>Quality of the air</h1>
-            <br><br>
+            <br>
             <div class="d-flex">
-             <div class="border border-dark w-25  p-5 mx-5">
-                <h2 id="air"></h2>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button">Call</button>
-                </div>
-             </div>
-             <label>Worker 1</label>
-             <div class="worker border border-dark w-25 p-5 mx-5">
-                <img src="anna.jpg"width="100"height="100"><br><br><br><br>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button">Call</button>
-                </div>
-             </div>
-             <label>Worker 2</label>
-            </div>
+              <div class="card card-header d-flex p-5 mx-5" style="width: 95%;height:500px"><br>
+                <div class="d-inline-flex p-2 ">
+                  <div class="air border border-dark w-25 p-5 mx-5" id="location" style="width: 55%;">
+                    <center> <h4>Worker 01</h4></center><br>
+                    <h5 id="air"></h5>
+                    <h4 id="button" style="color:red"></h4>
+           
+                 </div>
+                 
+                 <div class="air border border-dark w-25 p-5 mx-5">
+                  <center> <h4>Worker 02</h4></center><br>
+                 <h5>Normal</h5>
+                 <h4 style="color:red;">Worker is ok!</h4>
+               </div>          
+               
+             
+            
+              </div>
+              
+               
           </div>
-        </div>
+             
+            </div>
+          </div><br>
+        </div><br>
       </div>
 
       <script>
@@ -110,6 +118,42 @@
 
   
       </script>
+
+<script>
+  //get a reference to  the database service
+   var database=firebase.database();
+ 
+   // Get a reference to the node
+   var dataRef=database.ref('IR Sensor');
+ 
+ //Retrieve the data to the website
+   dataRef.child('status').once('value').then(function(snapshot){
+     var status=snapshot.val();
+     console.log(status);
+ 
+ // Display the sensor value in website
+     document.getElementById('fire').innerHTML=status;
+     
+   });
+ </script>
+
+ <script>
+  //get a reference to  the database service
+  var database=firebase.database();
+
+// Get a reference to the node
+var dataRef=database.ref('Button');
+
+//Retrieve the data to the website
+dataRef.child('status').once('value').then(function(snapshot){
+var status=snapshot.val();
+console.log(status);
+
+// Display the sensor value in website
+document.getElementById('button').innerHTML=status;
+
+});
+ </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
